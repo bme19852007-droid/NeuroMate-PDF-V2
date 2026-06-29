@@ -4,7 +4,7 @@
 # =========================================================
 
 import os
-
+from reportlab.lib.fonts import addMapping
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
@@ -61,6 +61,36 @@ class FontManager:
                         semibold
                     )
                 )
+
+            # Register Font Family
+
+            addMapping(
+                "Cairo",
+                0,
+                0,
+                "Cairo-Regular"
+            )
+
+            addMapping(
+                "Cairo",
+                1,
+                0,
+                "Cairo-Bold"
+            )
+
+            addMapping(
+                "Cairo",
+                0,
+                1,
+                "Cairo-Regular"
+            )
+
+            addMapping(
+                "Cairo",
+                1,
+                1,
+                "Cairo-Bold"
+            )
 
             print("✓ Cairo fonts loaded")
 

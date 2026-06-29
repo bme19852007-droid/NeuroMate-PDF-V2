@@ -5,14 +5,14 @@
 # =========================================================
 
 from neuromate.pdf_engine import NeuroMatePDF
-
+from neuromate.font_manager import FontManager
 
 def main():
 
     print("=" * 50)
     print(" NeuroMate PDF Generator V2")
     print("=" * 50)
-
+FontManager.register()
     pdf = NeuroMatePDF()
 
     pdf.create_document()
